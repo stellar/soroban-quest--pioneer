@@ -11,8 +11,6 @@
 - [Gitpod](#gitpod)
   - [VS Code](#vs-code)
   - [Terminal and Ports](#terminal-and-ports)
-    - [Terminals](#terminals)
-    - [Ports](#ports)
   - [Docker Container'd](#docker-containerd)
   - [Gitpod CLI](#gitpod-cli)
 - [Stellar Quest CLI](#stellar-quest-cli)
@@ -68,7 +66,7 @@ take a second to examine this a bit more in-depth.
 
 ![Terminal Panel][terminals]
 
-#### **Terminals**
+#### **Terminals** <!-- omit in toc -->
 
 On the right-hand side of this panel, you'll notice there are 4 (four) shells
 open. Each of them is designed for a specific purpose:
@@ -91,7 +89,7 @@ open. Each of them is designed for a specific purpose:
 Above this list of terminals, you could use the **+** icon to open another
 terminal, if you closed one of yours.
 
-#### **Ports**
+#### **Ports** <!-- omit in toc -->
 
 There are also a couple open ports that can be useful during your quests. You
 can see these ports by clicking on **Ports** in the top part of the terminal
