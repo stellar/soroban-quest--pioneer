@@ -279,11 +279,11 @@ the Soroban platform are there, and willing to answer questions, too! Talk about
 [rust]: https://www.rust-lang.org/
 [cargo]: https://doc.rust-lang.org/cargo/
 [vscode]: https://code.visualstudio.com/
-[soroban-cli]: https://github.com/stellar/soroban-cli
+[soroban-cli]: https://github.com/stellar/soroban-tools/tree/main/cmd/soroban-cli
 [video]: https://youtu.be/6_tgpth6U5Y
 [thumbnail]: https://user-images.githubusercontent.com/2024293/201189898-dd9ae16e-698c-4b2d-b442-fec7d7222f3f.jpg
 [terminals]: https://user-images.githubusercontent.com/2024293/201201300-f86bbc98-6c0a-4189-b92c-fe4145c95f0d.png
 [vsc-docs]: https://code.visualstudio.com/docs/terminal/basics
 [ports]: https://user-images.githubusercontent.com/2024293/201206484-f69f9123-3550-49be-97f2-f6f39fe9aa2f.png
-[discord]: https://discord.gg/8FhvuKb
+[discord]: https://quest.stellar.org/join
 [dev-discord]: https://discord.gg/stellardev
