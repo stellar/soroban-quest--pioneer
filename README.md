@@ -276,7 +276,7 @@ you to **Tinker and Earn** XLM with Soroban! Many of the people who are *creatin
 the Soroban platform are there, and willing to answer questions, too! Talk about
 "straight from the horse's mouth"!!
 
-[gitpod]: https://gitpod.io/#ENV=prod/https://github.com/tyvdh/soroban-quest--pioneer
+[gitpod]: https://gitpod.io/#ENV=prod/https://github.com/stellar/soroban-quest--pioneer
 [gp-cli]: https://www.gitpod.io/docs/references/gitpod-cli
 [rust]: https://www.rust-lang.org/
 [cargo]: https://doc.rust-lang.org/cargo/
