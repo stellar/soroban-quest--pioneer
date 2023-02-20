@@ -18,7 +18,6 @@
     - [The Easy Way](#the-easy-way)
     - [The Hard Way](#the-hard-way)
 - [Rust Environment](#rust-environment)
-  - [Check out the Makefile](#check-out-the-makefile)
 - [Soroban CLI](#soroban-cli)
 - [Futurenet](#futurenet)
 - [Good Luck](#good-luck)
@@ -221,13 +220,6 @@ hit the ground running. This includes:
 You have enough pre-installed to write, debug, test, build, and deploy Soroban
 smart contracts from right within this Gitpod workspace. We even have an example
 contract ready for you to look through in the `quests/0-hello-world/` directory.
-
-### Check out the Makefile
-
-You may have noticed the `Makefile` present in this repository. In it, there are
-comments explaining all the pre-configured build rules. To get started quickly,
-you can simply run `make`, `make build`, or `make test` from within your root
-workspace directory.
 
 ## Soroban CLI
 
