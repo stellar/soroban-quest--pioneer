@@ -1,4 +1,4 @@
-# Our customized docker image uses Gitpod's "workspace-full" image as a base.
+# Our customized docker image uses Gitpod's "workspace-rust" image as a base.
 FROM gitpod/workspace-rust:2023-01-16-03-31-28
 
 # These "RUN" shell commands are run on top of the "workspace-full" image, and
