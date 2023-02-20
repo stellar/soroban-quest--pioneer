@@ -1,5 +1,5 @@
 # Our customized docker image uses Gitpod's "workspace-full" image as a base.
-FROM gitpod/workspace-full:2022-12-30-17-11-09
+FROM gitpod/workspace-rust:2023-01-16-03-31-28
 
 # These "RUN" shell commands are run on top of the "workspace-full" image, and
 # then committed as a new image which will be used for the next steps.
@@ -8,7 +8,7 @@ FROM gitpod/workspace-full:2022-12-30-17-11-09
 # - sccache: a compiler cache that avoids running compiling tasks when possible
 # - deno: a JavaScript runtime built in Rust (we use this for the SQ cli)
 RUN mkdir -p ~/.local/bin
-RUN curl -L -o ~/.local/bin/soroban https://github.com/stellar/soroban-tools/releases/download/v0.3.3/soroban-cli-0.3.3-x86_64-unknown-linux-gnu
+RUN curl -L -o ~/.local/bin/soroban https://github.com/stellar/soroban-tools/releases/download/v0.6.0/soroban-cli-0.6.0-x86_64-unknown-linux-gnu
 RUN chmod +x ~/.local/bin/soroban
 RUN curl -L https://github.com/mozilla/sccache/releases/download/v0.3.1/sccache-v0.3.1-x86_64-unknown-linux-musl.tar.gz | tar xz --strip-components 1 -C ~/.local/bin sccache-v0.3.1-x86_64-unknown-linux-musl/sccache
 RUN chmod +x ~/.local/bin/sccache
@@ -24,6 +24,7 @@ ENV SCCACHE_DIR=/workspace/.sccache
 
 # In this chunk of "RUN" instructions, we are getting our rust environment
 # ready and prepared to write some Soroban smart contracts.
+RUN rustup toolchain uninstall stable-x86_64-unknown-linux-gnu
 RUN rustup install stable
 RUN rustup target add --toolchain stable wasm32-unknown-unknown
 RUN rustup component add --toolchain stable rust-src
