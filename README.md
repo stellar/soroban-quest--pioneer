@@ -262,16 +262,16 @@ Adoption Fund, which SDF created to support the growth and development of the
 Soroban ecosystem. We'll be sharing more about additional programs on the
 Stellar Dev Discord in the not-too-distant future, so make sure to join today to
 be the among the first to hear those announcements. This is yet another way for
-you to **Tinker and Earn** XLM with Soroban! Many of the people who are *creating*
-the Soroban platform are there, and willing to answer questions, too! Talk about
-"straight from the horse's mouth"!!
+you to **Tinker and Earn** XLM with Soroban! Many of the people who are
+*creating* the Soroban platform are there, and willing to answer questions, too!
+Talk about "straight from the horse's mouth"!!
 
 [gitpod]: https://gitpod.io/#ENV=prod/https://github.com/stellar/soroban-quest--pioneer
 [gp-cli]: https://www.gitpod.io/docs/references/gitpod-cli
 [rust]: https://www.rust-lang.org/
 [cargo]: https://doc.rust-lang.org/cargo/
 [vscode]: https://code.visualstudio.com/
-[soroban-cli]: https://github.com/stellar/soroban-tools/tree/main/cmd/soroban-cli
+[soroban-cli]: https://soroban.stellar.org/docs/reference/command-line
 [video]: https://youtu.be/6_tgpth6U5Y
 [thumbnail]: https://user-images.githubusercontent.com/2024293/201189898-dd9ae16e-698c-4b2d-b442-fec7d7222f3f.jpg
 [terminals]: https://user-images.githubusercontent.com/2024293/201201300-f86bbc98-6c0a-4189-b92c-fe4145c95f0d.png

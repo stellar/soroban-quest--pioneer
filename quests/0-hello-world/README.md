@@ -28,4 +28,4 @@ We've taken a "rubber duck debugging" approach to explaining the inner workings
 here, and it's made much of the contract writing conventions clearer, and make
 more sense for a novice.
 
-[examples]: https://github.com/stellar/soroban-examples
+[examples]: https://soroban.stellar.org/docs/category/how-to-guides

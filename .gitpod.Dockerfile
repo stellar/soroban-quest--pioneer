@@ -10,8 +10,10 @@ FROM gitpod/workspace-full:2023-01-16-03-31-28
 RUN mkdir -p ~/.local/bin
 RUN curl -L -o ~/.local/bin/soroban https://github.com/stellar/soroban-tools/releases/download/v0.6.0/soroban-cli-0.6.0-x86_64-unknown-linux-gnu
 RUN chmod +x ~/.local/bin/soroban
-RUN curl -L https://github.com/mozilla/sccache/releases/download/v0.3.1/sccache-v0.3.1-x86_64-unknown-linux-musl.tar.gz | tar xz --strip-components 1 -C ~/.local/bin sccache-v0.3.1-x86_64-unknown-linux-musl/sccache
+RUN curl -L https://github.com/mozilla/sccache/releases/download/v0.3.3/sccache-v0.3.3-x86_64-unknown-linux-musl.tar.gz | tar xz --strip-components 1 -C ~/.local/bin sccache-v0.3.3-x86_64-unknown-linux-musl/sccache
 RUN chmod +x ~/.local/bin/sccache
+
+RUN curl -L https://github.com/watchexec/cargo-watch/releases/download/v8.1.2/cargo-watch-v8.1.2-x86_64-unknown-linux-gnu.tar.xz | tar xJ --strip-components 1 -C ~/.local/bin cargo-watch-v8.1.2-x86_64-unknown-linux-gnu/cargo-watch
 
 RUN curl -LO https://github.com/denoland/deno/releases/download/v1.30.1/deno-x86_64-unknown-linux-gnu.zip
 RUN unzip deno-x86_64-unknown-linux-gnu.zip -d ~/.local/bin
@@ -30,7 +32,7 @@ RUN rm -rf .rustup
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # In this chunk of "RUN" instructions, we are getting our rust environment
 # ready and prepared to write some Soroban smart contracts.
-RUN rustup install stable
+RUN rustup update stable
 RUN rustup target add --toolchain stable wasm32-unknown-unknown
 RUN rustup component add --toolchain stable rust-src
 RUN rustup install nightly
