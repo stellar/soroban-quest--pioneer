@@ -11,8 +11,6 @@
 - [Gitpod](#gitpod)
   - [VS Code](#vs-code)
   - [Terminal and Ports](#terminal-and-ports)
-    - [Terminals](#terminals)
-    - [Ports](#ports)
   - [Docker Container'd](#docker-containerd)
   - [Gitpod CLI](#gitpod-cli)
 - [Stellar Quest CLI](#stellar-quest-cli)
@@ -20,7 +18,6 @@
     - [The Easy Way](#the-easy-way)
     - [The Hard Way](#the-hard-way)
 - [Rust Environment](#rust-environment)
-  - [Check out the Makefile](#check-out-the-makefile)
 - [Soroban CLI](#soroban-cli)
 - [Futurenet](#futurenet)
 - [Good Luck](#good-luck)
@@ -68,7 +65,7 @@ take a second to examine this a bit more in-depth.
 
 ![Terminal Panel][terminals]
 
-#### **Terminals**
+#### **Terminals** <!-- omit in toc -->
 
 On the right-hand side of this panel, you'll notice there are 4 (four) shells
 open. Each of them is designed for a specific purpose:
@@ -91,7 +88,7 @@ open. Each of them is designed for a specific purpose:
 Above this list of terminals, you could use the **+** icon to open another
 terminal, if you closed one of yours.
 
-#### **Ports**
+#### **Ports** <!-- omit in toc -->
 
 There are also a couple open ports that can be useful during your quests. You
 can see these ports by clicking on **Ports** in the top part of the terminal
@@ -224,13 +221,6 @@ You have enough pre-installed to write, debug, test, build, and deploy Soroban
 smart contracts from right within this Gitpod workspace. We even have an example
 contract ready for you to look through in the `quests/0-hello-world/` directory.
 
-### Check out the Makefile
-
-You may have noticed the `Makefile` present in this repository. In it, there are
-comments explaining all the pre-configured build rules. To get started quickly,
-you can simply run `make`, `make build`, or `make test` from within your root
-workspace directory.
-
 ## Soroban CLI
 
 Your workspace includes the Soroban CLI, as well. The Soroban CLI can execute
@@ -272,20 +262,20 @@ Adoption Fund, which SDF created to support the growth and development of the
 Soroban ecosystem. We'll be sharing more about additional programs on the
 Stellar Dev Discord in the not-too-distant future, so make sure to join today to
 be the among the first to hear those announcements. This is yet another way for
-you to **Tinker and Earn** XLM with Soroban! Many of the people who are *creating*
-the Soroban platform are there, and willing to answer questions, too! Talk about
-"straight from the horse's mouth"!!
+you to **Tinker and Earn** XLM with Soroban! Many of the people who are
+*creating* the Soroban platform are there, and willing to answer questions, too!
+Talk about "straight from the horse's mouth"!!
 
-[gitpod]: https://gitpod.io/#ENV=prod/https://github.com/tyvdh/soroban-quest--pioneer
+[gitpod]: https://gitpod.io/#ENV=prod/https://github.com/stellar/soroban-quest--pioneer
 [gp-cli]: https://www.gitpod.io/docs/references/gitpod-cli
 [rust]: https://www.rust-lang.org/
 [cargo]: https://doc.rust-lang.org/cargo/
 [vscode]: https://code.visualstudio.com/
-[soroban-cli]: https://github.com/stellar/soroban-cli
+[soroban-cli]: https://soroban.stellar.org/docs/reference/command-line
 [video]: https://youtu.be/6_tgpth6U5Y
 [thumbnail]: https://user-images.githubusercontent.com/2024293/201189898-dd9ae16e-698c-4b2d-b442-fec7d7222f3f.jpg
 [terminals]: https://user-images.githubusercontent.com/2024293/201201300-f86bbc98-6c0a-4189-b92c-fe4145c95f0d.png
 [vsc-docs]: https://code.visualstudio.com/docs/terminal/basics
 [ports]: https://user-images.githubusercontent.com/2024293/201206484-f69f9123-3550-49be-97f2-f6f39fe9aa2f.png
-[discord]: https://discord.gg/8FhvuKb
+[discord]: https://quest.stellar.org/join
 [dev-discord]: https://discord.gg/stellardev

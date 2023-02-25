@@ -32,12 +32,8 @@ codegen-units = 1
 # Use link time optimizations to generate a better optimzed binary.
 lto = true
 
+# The dependencies we define here are inherited by all members of our workspace.
+# We could specify version numbers, crate URLs, and even specific commits to be
+# used for a given dependency.
 [workspace.dependencies.soroban-sdk]
-version = "0.3.2"
-git = "https://github.com/stellar/rs-soroban-sdk"
-rev = "e2ecbee"
-
-[workspace.dependencies.soroban-auth]
-version = "0.3.2"
-git = "https://github.com/stellar/rs-soroban-sdk"
-rev = "e2ecbee"
+version = "0.6.0"
