@@ -689,11 +689,12 @@ const getRPCStatus = (horizon: URL): Promise<RPCStatus> => {
 }
 
 enum knownHorizons {
+  SDF = "https://rpc-futurenet.stellar.org:443",
+  kalepail = "https://kalepail-futurenet.stellar.quest:443",
   KanayeNet = "https://kanaye-futurenet.stellar.quest:443",
   nebolsin = "https://nebolsin-futurenet.stellar.quest:443",
-  kalepail = "https://kalepail-futurenet.stellar.quest:443",
-  silence = "https://silence-futurenet.stellar.quest:443",
   Raph = "https://raph-futurenet.stellar.quest:443",
+  silence = "https://silence-futurenet.stellar.quest:443",
 }
 
 const selectRPCEndpoint = async () => {
@@ -703,11 +704,12 @@ const selectRPCEndpoint = async () => {
       { name: "No (use local)", value: `${LOCAL_HORIZON}${SOROBAN_RPC_URI}` },
       { name: "Custom (your own)", value: "custom" },
       { name: "--------", value: '', disabled: true },
+      { name: "SDF", value: `${knownHorizons.SDF}${SOROBAN_RPC_URI}` },
+      { name: "kalepail", value: `${knownHorizons.kalepail}${SOROBAN_RPC_URI}` },
       { name: "KanayeNet", value: `${knownHorizons.KanayeNet}${SOROBAN_RPC_URI}` },
       { name: "nebolsin", value: `${knownHorizons.nebolsin}${SOROBAN_RPC_URI}` },
-      { name: "kalepail", value: `${knownHorizons.kalepail}${SOROBAN_RPC_URI}` },
-      { name: "silence", value: `${knownHorizons.silence}${SOROBAN_RPC_URI}` },
       { name: "Raph", value: `${knownHorizons.Raph}${SOROBAN_RPC_URI}` },
+      { name: "silence", value: `${knownHorizons.silence}${SOROBAN_RPC_URI}` },
     ],
     default: "no"
   });
