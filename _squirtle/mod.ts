@@ -443,7 +443,7 @@ const runRPC = async (argv: any, selectOnNotReady = true) => {
 
   // TODO if we're ready but using a SOROBAN_RPC_URL that isn't the Gitpod's ask if we want to revert (or maybe just revert automatically?)
 
-  if (ready) {
+  if (ready || selectedHorizon === knownHorizons.SDF) {
     statusMessage += ` Your ${rpcIdentifier} is ready!`
     console.log(statusMessage)
   }
