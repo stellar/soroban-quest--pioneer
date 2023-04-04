@@ -646,9 +646,8 @@ const getHorizonEndpoint = (): Promise<string> => {
     .catch(() => LOCAL_HORIZON)
 }
 
-const isAccountFunded = async (pk: string): Promise<boolean> => {
-  return await getHorizonEndpoint()
-    .then(horizon => fetch(`${horizon}/accounts/${pk}`))
+const isAccountFunded = (pk: string): Promise<boolean> => {
+  return fetch(`https://horizon-futurenet.stellar.org/accounts/${pk}`)
     .then(({ status }) => status === 200)
 }
 
