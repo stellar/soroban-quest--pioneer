@@ -435,9 +435,14 @@ const runRPC = async (argv: any, selectOnNotReady = true) => {
   }
 
   const selectedHorizon = await getHorizonEndpoint()
-  const selectedRpcEndpoint = new URL(SOROBAN_RPC_URI, selectedHorizon).toString()
+  const selectedRpcEndpoint = new URL(
+    selectedHorizon === knownHorizons.SDF 
+      ? ''
+      : SOROBAN_RPC_URI,
+    selectedHorizon
+  ).toString()
   const rpcIdentifier = `selected RPC endpoint (${selectedRpcEndpoint})`
-  const { ready, status } = await getRPCStatus(new URL(selectedHorizon))
+  const { ready, status } = await getRPCStatus(selectedHorizon)
 
   let statusMessage = rpcEmotes[status]
 
@@ -667,7 +672,8 @@ const rpcEmotes: { [key in rpcStatusCode]: rpcStatusEmoji } = {
   ready: '📡',
 }
 
-const getRPCStatus = (horizon: URL): Promise<RPCStatus> => {
+const getRPCStatus = (selectedHorizon: string): Promise<RPCStatus> => {
+  const horizon: URL = new URL(selectedHorizon)
   let status: rpcStatusCode = 'unknown'
 
   return fetch(horizon)
@@ -685,7 +691,12 @@ const getRPCStatus = (horizon: URL): Promise<RPCStatus> => {
         status,
       }
     })
-    .catch(() => ({ ready: false, status }))
+    .catch(() => {
+      if (selectedHorizon === knownHorizons.SDF)
+        return { ready: true, status: 'ready' }
+
+      return { ready: false, status }
+    })
 }
 
 enum knownHorizons {
@@ -704,7 +715,7 @@ const selectRPCEndpoint = async () => {
       { name: "No (use local)", value: `${LOCAL_HORIZON}${SOROBAN_RPC_URI}` },
       { name: "Custom (your own)", value: "custom" },
       { name: "--------", value: '', disabled: true },
-      { name: "SDF", value: `${knownHorizons.SDF}${SOROBAN_RPC_URI}` },
+      { name: "SDF", value: knownHorizons.SDF },
       { name: "kalepail", value: `${knownHorizons.kalepail}${SOROBAN_RPC_URI}` },
       { name: "KanayeNet", value: `${knownHorizons.KanayeNet}${SOROBAN_RPC_URI}` },
       { name: "nebolsin", value: `${knownHorizons.nebolsin}${SOROBAN_RPC_URI}` },
