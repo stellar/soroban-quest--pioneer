@@ -271,7 +271,7 @@ Talk about "straight from the horse's mouth"!!
 [rust]: https://www.rust-lang.org/
 [cargo]: https://doc.rust-lang.org/cargo/
 [vscode]: https://code.visualstudio.com/
-[soroban-cli]: https://soroban.stellar.org/docs/reference/command-line
+[soroban-cli]: https://soroban.stellar.org/docs/reference/soroban-cli
 [video]: https://youtu.be/6_tgpth6U5Y
 [thumbnail]: https://user-images.githubusercontent.com/2024293/201189898-dd9ae16e-698c-4b2d-b442-fec7d7222f3f.jpg
 [terminals]: https://user-images.githubusercontent.com/2024293/201201300-f86bbc98-6c0a-4189-b92c-fe4145c95f0d.png
