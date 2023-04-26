@@ -20,12 +20,17 @@ episode of Bee's hunt for the golden soroban!
 ## Commented Examples
 
 Inside the `src/` directory, you will find a well-documented version of the
-"Hello World" example from the official [soroban-examples][examples] repository.
-It will take you line-by-line through the contract that's been written, as well
-as the tests.
+["Hello World" example][hello-world] from the official
+[soroban-examples][examples] repository. It will take you line-by-line through
+the contract that's been written, as well as the tests.
 
 We've taken a "rubber duck debugging" approach to explaining the inner workings
 here, and it's made much of the contract writing conventions clearer, and make
 more sense for a novice.
 
+In the rest of the Soroban quests, the files inside the `src/` directory, will
+also include indispensible information and insight. Trust me when I say you'll
+want to **read the source code in all of the quests**.
+
+[hello-world]: https://soroban.stellar.org/docs/getting-started/hello-world
 [examples]: https://soroban.stellar.org/docs/category/how-to-guides

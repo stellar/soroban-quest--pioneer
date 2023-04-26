@@ -9,11 +9,10 @@
 use super::*;
 
 // From our Soroban SDK, we import the following macros:
-// - symbol: creates a `Symbol` with the given string
 // - vec: creates a `Vec` with the given items
 // We also import the following types from the SDK:
 // - Env: provides access to the environment the contract is executing within
-use soroban_sdk::{symbol, vec, Env};
+use soroban_sdk::{vec, Env};
 
 // Here we add the `test` attribute to the `test()` function so Rust will know
 // to build a test runner for it.
@@ -32,10 +31,13 @@ fn test() {
     let client = HelloContractClient::new(&env, &contract_id);
 
     // We invoke the `hello()` function from our `HelloContract`, providing the
-    // `Symbol` "Dev" as the `to` argument.
-    let words = client.hello(&symbol!("Dev"));
+    // short `Symbol` "Dev" as the `to` argument.
+    let words = client.hello(&Symbol::short("Dev"));
     // Now, the actual test. We are asserting that the returned value from the
     // `hello()` function should be equal to a `Vec` we manually create with
     // our desired values: ["Hello","Dev"]
-    assert_eq!(words, vec![&env, symbol!("Hello"), symbol!("Dev"),]);
+    assert_eq!(
+        words, 
+        vec![&env, Symbol::short("Hello"), Symbol::short("Dev"),]
+    );
 }
