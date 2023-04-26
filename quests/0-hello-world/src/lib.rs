@@ -5,13 +5,12 @@
 
 // From our Soroban SDK, we import the following macros:
 // - contractimpl: exports the public functions defined in the implementation
-// - symbol: creates a `Symbol` with the given string
 // - vec: creates a `Vec` with the given items
 // We also import the following types from the SDK:
 // - Env: provides access to the environment the contract is executing within
-// - Symbol: represents strings up to 10 characters long (a-zA-Z0-0_)
+// - Symbol: represents strings up to 32 characters long (a-zA-Z0-0_)
 // - Vec: a sequential and indexable growable collection
-use soroban_sdk::{contractimpl, symbol, vec, Env, Symbol, Vec};
+use soroban_sdk::{contractimpl, vec, Env, Symbol, Vec};
 
 // Defining a "unit-like" struct in the following manner allows us to easily
 // implement the `HelloContract` type (and any required traits) without the need
@@ -37,7 +36,10 @@ impl HelloContract {
     pub fn hello(env: Env, to: Symbol) -> Vec<Symbol> {
         // We are creating and returning a `Vec` containing two `Symbol` items:
         // ["Hello","friend"] (depends on what is supplied as the `to` argument)
-        vec![&env, symbol!("Hello"), to]
+        // The use of `Symbol::short` here is done because our given string is
+        // fewer than 10 characters. Otherwise, we could use `Symbol::new` for
+        // strings up to 32 characters.
+        vec![&env, Symbol::short("Hello"), to]
     }
 }
 
