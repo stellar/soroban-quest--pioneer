@@ -12,7 +12,9 @@ use super::*;
 // - vec: creates a `Vec` with the given items
 // We also import the following types from the SDK:
 // - Env: provides access to the environment the contract is executing within
-use soroban_sdk::{vec, Env};
+// - Symbol: a short (32 or fewer characters) string with a limited character
+//   set [a-zA-Z0-9_]
+use soroban_sdk::{vec, Env, Symbol};
 
 // Here we add the `test` attribute to the `test()` function so Rust will know
 // to build a test runner for it.
@@ -23,12 +25,12 @@ fn test() {
     // environment our Soroban contract will run in.
     let env = Env::default();
     // We register the `HelloContract` contract within our environment, and
-    // receive back the contract id
-    let contract_id = env.register_contract(None, HelloContract);
+    // receive back the contract address
+    let contract_address = env.register_contract(None, HelloContract);
     // We also construct a `HelloContractClient` that will be used to invoke the
     // contract functions. This client was created when we used the
     // `contractimpl` macro in `lib.rs`.
-    let client = HelloContractClient::new(&env, &contract_id);
+    let client = HelloContractClient::new(&env, &contract_address);
 
     // We invoke the `hello()` function from our `HelloContract`, providing the
     // short `Symbol` "Dev" as the `to` argument.
@@ -37,7 +39,7 @@ fn test() {
     // `hello()` function should be equal to a `Vec` we manually create with
     // our desired values: ["Hello","Dev"]
     assert_eq!(
-        words, 
+        words,
         vec![&env, Symbol::short("Hello"), Symbol::short("Dev"),]
     );
 }
