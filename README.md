@@ -14,9 +14,6 @@
   - [Docker Container'd](#docker-containerd)
   - [Gitpod CLI](#gitpod-cli)
 - [Stellar Quest CLI](#stellar-quest-cli)
-  - [Getting New Quests](#getting-new-quests)
-    - [The Easy Way](#the-easy-way)
-    - [The Hard Way](#the-hard-way)
 - [Rust Environment](#rust-environment)
 - [Soroban CLI](#soroban-cli)
 - [Futurenet](#futurenet)
@@ -27,8 +24,8 @@
 
 Welcome to the Pioneer Quest for our upcoming Soroban Quest! We are beyond
 excited you've joined us. These quests are going to be fun, exciting, and
-*interesting* to be sure! There's a lot to go through so you are up to speed,
-so let's jump in!
+_interesting_ to be sure! There's a lot to go through so you are up to speed, so
+let's jump in!
 
 ## Video Walkthrough
 
@@ -42,7 +39,7 @@ alley, you can [watch the video right here][video]!
 
 ## Gitpod
 
-You are reading this *from inside* a Gitpod development environment. You heard
+You are reading this _from inside_ a Gitpod development environment. You heard
 right! A freshly baked, automated environment built just for you! A couple
 things you should know about Gitpod:
 
@@ -71,10 +68,10 @@ On the right-hand side of this panel, you'll notice there are 4 (four) shells
 open. Each of them is designed for a specific purpose:
 
 - `Albedo Signer` - A simple webapp that facilitiates claiming rewards for
-  completed quests. (You won't be required to actually *do* anything in this
+  completed quests. (You won't be required to actually _do_ anything in this
   shell.)
 - `Futurenet: docker` - An instance of the Futurenet node that is running inside
-  your Gitpod workspace. (You won't be required to actually *do* anything in
+  your Gitpod workspace. (You won't be required to actually _do_ anything in
   this shell either.)
 - `CLI - Futurenet` - This shell is designed for interacting with the Futurenet
   network. It has some environment variables customized for this purpose, and
@@ -95,12 +92,11 @@ can see these ports by clicking on **Ports** in the top part of the terminal
 panel (see above screenshot). You could also click on **Ports: 8000, 3000** in
 the lower-right-hand corner of the Gitpod workspace (see below screenshot).
 
-- **Port 3000** - You can ignore the **Albedo Signer**
-  port. That's open so we can use it along with the `sq` CLI to get your earned
-  rewards to you.
+- **Port 3000** - You can ignore the **Albedo Signer** port. That's open so we
+  can use it along with the `sq` CLI to get your earned rewards to you.
 - **Port 8000** - On port 8000 of your Gitpod workspace lives various tools to
   interact with the Futurenet network. There is a running instance of JSON-RPC
-  (which you will need to use) and a Horizon API server (which can be *very*
+  (which you will need to use) and a Horizon API server (which can be _very_
   useful).
 
 Both of these ports are publicly available on the web, at the listed addresses.
@@ -112,11 +108,11 @@ your local computer!
 ### Docker Container'd
 
 That's right, Gitpod is running on a Docker-ized container so that we can be
-certain *your* setup for these Soroban Quests is **exactly** the same as *our*
+certain _your_ setup for these Soroban Quests is **exactly** the same as _our_
 setup! We have a few tasks configured to run on your Gitpod's startup. They're
 briefly explained below, but you can also read through `.gitpod.yml` and
-`.gitpod.Dockerfile` to get a sense of what is happening during
-the build process.
+`.gitpod.Dockerfile` to get a sense of what is happening during the build
+process.
 
 ### Gitpod CLI
 
@@ -127,7 +123,7 @@ Preat neat, huh!? You can [learn all about it here][gp-cli]!
 ## Stellar Quest CLI
 
 Would you belive that we've made, specifically for our Soroban Quest, a Stellar
-Quest CLI?! No joke! It's *super awesome*, and **absolutely essential** for you
+Quest CLI?! No joke! It's _super awesome_, and **absolutely essential** for you
 to understand, if you want to succeed in this live series. It's (awesomely)
 called "Squirtle" but you'll become more familiar with invoking it as `sq`. The
 code for it lives in the `_squirtle/` directory, but you won't need to bother
@@ -173,38 +169,6 @@ Options:
   -h, --help     Show help                                             [boolean]
 ```
 
-### Getting New Quests
-
-We're confident you'll be able to figure out how to use `sq` on your own, but
-there *is* one part that deserves some extra attention: the mechanics around
-getting a new quest when it becomes available. When we release a new quest,
-there are two ways you can pull in the new information: the "easy" `sq` way, or
-the "hard" `git` way.
-
-#### The Easy Way
-
-All you'll need to do is run `sq pull` from within any of the bash shells in the
-workspace, and it will pull in all the new information for you. The CLI will
-attempt to save any changes you've made to the directory, as well.
-
-#### The Hard Way
-
-If you're a `git` pro, this might be right up your alley. Essentially, what you
-need to do is fetch from the origin and incorporate the changes within the
-`quests/` directory into your working tree. If you want to use the same sequence
-of git commands that the SQ CLI uses, here's what it does:
-
-```bash
-git stash
-git fetch --all
-git pull -X theirs
-git stash pop
-```
-
-There may be some conflict cleanup required, depending on the current state of
-your working tree when you run those commands. You could also skip the `stash`
-steps if you don't care to save existing changes within the `quests/` directory.
-
 ## Rust Environment
 
 Crucially toward the goal of writing smart contracts for Soroban, your workspace
@@ -212,7 +176,7 @@ contains a fully configured, ready to go Rust development environment. We have
 all the tooling, compilers, build processes, and anything else you'll need to
 hit the ground running. This includes:
 
-- An up-to-date version of the [Rust][rust] programming language
+- An specified version of the [Rust][rust] programming language
 - This pre-configured [VS Code][vscode] editor, with some essential extensions
 - The [Cargo][cargo] package manager for Rust crates
 - The `wasm32-unknown-unknown` target for compiling your contracts
@@ -250,7 +214,7 @@ have fun!!
 
 ## Join us on Discord
 
-We have a thriving, active, and *extremely* helpful Discord community! Join the
+We have a thriving, active, and _extremely_ helpful Discord community! Join the
 [Stellar Quest Discord server][discord], where you'll find so many friendly
 folks who will help get you on your way! This Discord server is an excellent
 place to ask questions, learn the ropes, find tools, and meet others on the same
@@ -263,7 +227,7 @@ Soroban ecosystem. We'll be sharing more about additional programs on the
 Stellar Dev Discord in the not-too-distant future, so make sure to join today to
 be the among the first to hear those announcements. This is yet another way for
 you to **Tinker and Earn** XLM with Soroban! Many of the people who are
-*creating* the Soroban platform are there, and willing to answer questions, too!
+_creating_ the Soroban platform are there, and willing to answer questions, too!
 Talk about "straight from the horse's mouth"!!
 
 [gitpod]: https://gitpod.io/#ENV=prod/https://github.com/stellar/soroban-quest--pioneer

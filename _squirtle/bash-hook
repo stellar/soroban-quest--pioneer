@@ -2,7 +2,7 @@ function _sq_set_secret() {
     if [[ -n "$COMP_LINE" ]]; then return; fi
     if [[ -f /workspace/.soroban-secret-key ]]
     then
-        export SOROBAN_SECRET_KEY=$(</workspace/.soroban-secret-key)
+        export SOROBAN_ACCOUNT=$(</workspace/.soroban-secret-key)
     fi
     if [[ -f /workspace/.soroban-rpc-url ]]
     then
