@@ -10,13 +10,13 @@ tasks:
   - name: Futurenet
     # During the "init" phase, docker will download the quickstart image.
     init: |
-      docker pull stellar/quickstart:soroban-dev@sha256:a057ec6f06c6702c005693f8265ed1261e901b153a754e97cf18b0962257e872
+      docker pull stellar/quickstart:soroban-dev@sha256:57e8ab498bfa14c65595fbb01cb94b1cdee9637ef2e6634e59d54f6958c05bdb
     # We enable a local JSON-RPC endpoint that will listen on port 8000.
     command: |
       docker run --rm -it \
       -p 8000:8000 \
       --name stellar \
-      stellar/quickstart:soroban-dev@sha256:a057ec6f06c6702c005693f8265ed1261e901b153a754e97cf18b0962257e872 \
+      stellar/quickstart:soroban-dev@sha256:57e8ab498bfa14c65595fbb01cb94b1cdee9637ef2e6634e59d54f6958c05bdb \
       --futurenet \
       --enable-soroban-rpc
   # The "Albedo Signer" task begins a simple web app from within the Gitpod

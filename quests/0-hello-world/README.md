@@ -7,9 +7,9 @@ so much commented useful stuff!
 ## README.md
 
 You are currently reading this file, so you don't really need an explanation of
-what it is... But, in the live quests, this file will contain instructions and
-a task for what you must accomplish to successfully complete the quest. When
-it's time to quest, this will be where you want to start.
+what it is... But, in the live quests, this file will contain instructions and a
+task for what you must accomplish to successfully complete the quest. When it's
+time to quest, this will be where you want to start.
 
 ## STORY.md
 
