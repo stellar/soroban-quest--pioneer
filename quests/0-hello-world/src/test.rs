@@ -34,12 +34,12 @@ fn test() {
 
     // We invoke the `hello()` function from our `HelloContract`, providing the
     // short `Symbol` "Dev" as the `to` argument.
-    let words = client.hello(&Symbol::short("Dev"));
+    let words = client.hello(&symbol_short!("Dev"));
     // Now, the actual test. We are asserting that the returned value from the
     // `hello()` function should be equal to a `Vec` we manually create with
     // our desired values: ["Hello","Dev"]
     assert_eq!(
         words,
-        vec![&env, Symbol::short("Hello"), Symbol::short("Dev"),]
+        vec![&env, symbol_short!("Hello"), symbol_short!("Dev"),]
     );
 }

@@ -33,4 +33,4 @@ also include indispensible information and insight. Trust me when I say you'll
 want to **read the source code in all of the quests**.
 
 [hello-world]: https://soroban.stellar.org/docs/getting-started/hello-world
-[examples]: https://soroban.stellar.org/docs/category/how-to-guides
+[examples]: https://github.com/stellar/soroban-examples
