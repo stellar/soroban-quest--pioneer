@@ -5,19 +5,19 @@ image:
 # These are the tasks that are run during the Gitpod setup. Each of the tasks
 # included will open its own terminal window where it can run.
 tasks:
-  # This "Futurenet" task starts up a Stellar validator node and joins it to the
+  # This "Testnet" task starts up a Stellar validator node and joins it to the
   # futurenet for you.
-  - name: Futurenet
+  - name: Testnet
     # During the "init" phase, docker will download the quickstart image.
     init: |
-      docker pull stellar/quickstart:soroban-dev@sha256:8a99332f834ca82e3ac1418143736af59b5288e792d1c4278d6c547c6ed8da3b
+      docker pull stellar/quickstart:testing@sha256:40636cdb1b9168b47e5dc120949fe3610ff914e8dd43409edb6fa66496bdd9c3
     # We enable a local JSON-RPC endpoint that will listen on port 8000.
     command: |
       docker run --rm -it \
       -p 8000:8000 \
       --name stellar \
-      stellar/quickstart:soroban-dev@sha256:8a99332f834ca82e3ac1418143736af59b5288e792d1c4278d6c547c6ed8da3b \
-      --futurenet \
+      stellar/quickstart:testing@sha256:40636cdb1b9168b47e5dc120949fe3610ff914e8dd43409edb6fa66496bdd9c3
+      --testnet \
       --enable-soroban-rpc
   # The "Albedo Signer" task begins a simple web app from within the Gitpod
   # workspace that is used to communicate with the Stellar Quest backend for
@@ -35,11 +35,11 @@ tasks:
       npm run start
   # This "CLI - Futurenet" task opens a terminal for you to interact with the
   # futurenet network.
-  - name: CLI - Futurenet
+  - name: CLI - Testnet
     # We specify some required environment variables for use on the futurenet.
     env:
-      SOROBAN_RPC_URL: "https://rpc-futurenet.stellar.org:443"
-      SOROBAN_NETWORK_PASSPHRASE: "Test SDF Future Network ; October 2022"
+      SOROBAN_RPC_URL: "https://soroban-testnet.stellar.org:443"
+      SOROBAN_NETWORK_PASSPHRASE: "Test SDF Network ; September 2015"
     # To keep things tidy, we clear the terminal from the previous output.
     command: |
       source _squirtle/bash-hook
@@ -83,7 +83,7 @@ github:
 ports:
   # Your quickstart node has a Horizon API server and an RPC endpoint, both
   # listening on port 8000. It's publicly accessible through the internet.
-  - name: Futurenet
+  - name: Testnet
     port: 8000
     visibility: public
     onOpen: ignore
