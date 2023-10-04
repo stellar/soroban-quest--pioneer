@@ -6,7 +6,7 @@ image:
 # included will open its own terminal window where it can run.
 tasks:
   # This "Testnet" task starts up a Stellar validator node and joins it to the
-  # futurenet for you.
+  # Testnet for you.
   - name: Testnet
     # During the "init" phase, docker will download the quickstart image.
     init: |
@@ -33,10 +33,10 @@ tasks:
       cd ../_client
       clear
       npm run start
-  # This "CLI - Futurenet" task opens a terminal for you to interact with the
-  # futurenet network.
+  # This "CLI - Testnet" task opens a terminal for you to interact with the
+  # Testnet network.
   - name: CLI - Testnet
-    # We specify some required environment variables for use on the futurenet.
+    # We specify some required environment variables for use on the Testnet.
     env:
       SOROBAN_RPC_URL: "https://soroban-testnet.stellar.org:443"
       SOROBAN_NETWORK_PASSPHRASE: "Test SDF Network ; September 2015"
