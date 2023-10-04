@@ -65,19 +65,6 @@ vscode:
     - vadimcn.vscode-lldb
     - rust-lang.rust-analyzer
 
-# We have our Gitpod's "prebuild" continuously built so you can always have the
-# freshest experience possible. I bet you can guess what most of these options
-# do, so we won't dwell here.
-github:
-  prebuilds:
-    master: true
-    branches: true
-    pullRequests: true
-    pullRequestsFromForks: true
-    addCheck: false
-    addComment: true
-    addBadge: true
-
 # We have a couple ports open in your Gitpod workspace to facilitate the quest
 # functionality we need.
 ports:
