@@ -14,7 +14,7 @@ use super::*;
 // - Env: provides access to the environment the contract is executing within
 // - Symbol: a short (32 or fewer characters) string with a limited character
 //   set [a-zA-Z0-9_]
-use soroban_sdk::{vec, Env, Symbol};
+use soroban_sdk::{vec, Env};
 
 // Here we add the `test` attribute to the `test()` function so Rust will know
 // to build a test runner for it.

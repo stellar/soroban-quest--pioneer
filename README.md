@@ -16,7 +16,7 @@
 - [Stellar Quest CLI](#stellar-quest-cli)
 - [Rust Environment](#rust-environment)
 - [Soroban CLI](#soroban-cli)
-- [Futurenet](#futurenet)
+- [Testnet](#testnet)
 - [Good Luck](#good-luck)
 - [Join us on Discord](#join-us-on-discord)
 
@@ -70,17 +70,17 @@ open. Each of them is designed for a specific purpose:
 - `Albedo Signer` - A simple webapp that facilitiates claiming rewards for
   completed quests. (You won't be required to actually _do_ anything in this
   shell.)
-- `Futurenet: docker` - An instance of the Futurenet node that is running inside
+- `Testnet: docker` - An instance of the Testnet node that is running inside
   your Gitpod workspace. (You won't be required to actually _do_ anything in
   this shell either.)
-- `CLI - Futurenet` - This shell is designed for interacting with the Futurenet
+- `CLI - Testnet` - This shell is designed for interacting with the Testnet
   network. It has some environment variables customized for this purpose, and
   will make it easier and quicker for you to work with the network. When we say
-  something like "you need to deploy a contract to the Futurenet," you'll want
+  something like "you need to deploy a contract to the Testnet," you'll want
   to do that from this shell.
 - `CLI - Sandbox` - This is the "playground" you can use to build and test a
   contract without needing to deploy it anywhere. Anything done in the sandbox
-  environment will not affect any accounts on the Futurenet network.
+  environment will not affect any accounts on the Testnet network.
 
 Above this list of terminals, you could use the **+** icon to open another
 terminal, if you closed one of yours.
@@ -95,12 +95,12 @@ the lower-right-hand corner of the Gitpod workspace (see below screenshot).
 - **Port 3000** - You can ignore the **Albedo Signer** port. That's open so we
   can use it along with the `sq` CLI to get your earned rewards to you.
 - **Port 8000** - On port 8000 of your Gitpod workspace lives various tools to
-  interact with the Futurenet network. There is a running instance of JSON-RPC
+  interact with the Testnet network. There is a running instance of JSON-RPC
   (which you will need to use) and a Horizon API server (which can be _very_
   useful).
 
 Both of these ports are publicly available on the web, at the listed addresses.
-You could even use this RPC endpoint to interact with the Futurenet network from
+You could even use this RPC endpoint to interact with the Testnet network from
 your local computer!
 
 ![Open Gitpod Ports][ports]
@@ -137,7 +137,7 @@ SQ backend. You can use it to:
 - visit the Stellar Quest website,
 - fetch new quests when they become available,
 - generate a keypair to play a particular quest,
-- fund Quest Keypairs on the Futurenet,
+- fund Quest Keypairs on the Testnet,
 - check and/or verify the quests you've completed,
 - get rewards for completing quests successfully
 
@@ -157,7 +157,7 @@ Commands:
   sq open           Open the Stellar Quest website
   sq pull           Pull any new or missing Quests into the /quests directory
   sq play [index]   Generate a Quest Keypair to play a Quest
-  sq fund [key]     Create and fund an account on the Futurenet
+  sq fund [key]     Create and fund an account on the Testnet
   sq check [index]  Check your Quest answer
   sq submit [xdr]   Submit a signed reward XDR to the Stellar Quest backend
   sq rpc            Check the status of your local RPC endpoint
@@ -193,11 +193,11 @@ however in a local sandbox. This tool is in active development. So, conventions
 and usage should be expected to change. You can always find the latest about
 the [Soroban CLI here][soroban-cli]!
 
-## Futurenet
+## Testnet
 
 Did you know you have access to a Stellar network node right now!? Yeah, right
 here in your browser, in this workspace there's a Stellar node connected to the
-"Futurenet" testing network. We've taken care of all the work so you don't have
+"Testnet" testing network. We've taken care of all the work so you don't have
 to worry about docker images, starting the service, or anything besides learning
 to make contracts!
 

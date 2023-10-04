@@ -201,7 +201,7 @@ const runUser = async (
   console.log(`-----------------------------`);
 
   if (missing) {
-    const missingConfirmed = await Confirm.prompt(`Your account is not yet fully complete. 
+    const missingConfirmed = await Confirm.prompt(`Your account is not yet fully complete.
    This could affect your ability to claim either NFT or XLM rewards.
    Would you like to complete your Stellar Quest account?`);
 
@@ -300,7 +300,7 @@ const runCheck = async (argv: any) => {
   const siteUrl = isDev ? 'https://quest-dev.stellar.org' : 'https://quest.stellar.org'
 
   if (!user.pk) {
-    const missingPkConfirmed = await Confirm.prompt(`You have not yet connected your Stellar wallet. 
+    const missingPkConfirmed = await Confirm.prompt(`You have not yet connected your Stellar wallet.
    This will affect your ability to claim NFT and XLM rewards.
    Would you like to connect your Stellar wallet?`);
 
@@ -436,7 +436,7 @@ const runRPC = async (argv: any, selectOnNotReady = true) => {
 
   const selectedHorizon = await getHorizonEndpoint()
   const selectedRpcEndpoint = new URL(
-    selectedHorizon === knownHorizons.SDF 
+    selectedHorizon === knownHorizons.SDF
       ? ''
       : SOROBAN_RPC_URI,
     selectedHorizon
@@ -647,12 +647,12 @@ const getHorizonEndpoint = (): Promise<string> => {
 }
 
 const isAccountFunded = (pk: string): Promise<boolean> => {
-  return fetch(`https://horizon-futurenet.stellar.org/accounts/${pk}`)
+  return fetch(`https://horizon-testnet.stellar.org/accounts/${pk}`)
     .then(({ status }) => status === 200)
 }
 
 const doFund = (pk: string) => {
-  return fetch(`https://friendbot-futurenet.stellar.org/?addr=${pk}`)
+  return fetch(`https://friendbot.stellar.org/?addr=${pk}`)
     .then(handleResponse)
     .catch(printErrorBreak)
 }
@@ -699,7 +699,7 @@ const getRPCStatus = (selectedHorizon: string): Promise<RPCStatus> => {
 }
 
 enum knownHorizons {
-  SDF = "https://rpc-futurenet.stellar.org:443",
+  SDF = "https://soroban-testnet.stellar.org:443",
   // kalepail = "https://kalepail-futurenet.stellar.quest:443",
   // KanayeNet = "https://kanaye-futurenet.stellar.quest:443",
   // nebolsin = "https://nebolsin-futurenet.stellar.quest:443",
@@ -741,7 +741,7 @@ const selectRPCEndpoint = async () => {
 
   getDotFilesLocation()
     .then((location: string) => Deno.writeFileSync(
-      `${location}/.soroban-rpc-url`, 
+      `${location}/.soroban-rpc-url`,
       new TextEncoder().encode(altNet)
     ))
 
@@ -814,7 +814,7 @@ yargs(Deno.args)
       describe: 'The index of the quest to play',
       alias: ['i', 'number', 'n', 'quest', 'q'],
     }).demandOption(['index']), runPlay)
-  .command('fund [key]', 'Create and fund an account on the Futurenet', (yargs: any) => yargs
+  .command('fund [key]', 'Create and fund an account on the Testnet', (yargs: any) => yargs
     .positional('key', {
       describe: 'The public key of the account to fund',
       alias: ['k', 'addr', 'address', 'acct', 'account']
