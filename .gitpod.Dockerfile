@@ -1,6 +1,6 @@
 # Our customized docker image uses Gitpod's "workspace-full" image as a base.
-FROM gitpod/workspace-full:2023-10-03-17-29-28
-LABEL version="1.1.22"
+FROM gitpod/workspace-full:2023-12-27-09-44-38
+LABEL version="1.1.23"
 
 # These "RUN" shell commands are run on top of the "workspace-full" image, and
 # then committed as a new image which will be used for the next steps.
@@ -10,7 +10,7 @@ LABEL version="1.1.22"
 # - cargo-watch: watches the project for changes and runs cargo when they occur
 # - deno: a JavaScript runtime built in Rust (we use this for the SQ cli)
 RUN mkdir -p ~/.local/bin
-RUN curl -L https://github.com/stellar/soroban-tools/releases/download/v20.0.0-rc4/soroban-cli-20.0.0-rc4-x86_64-unknown-linux-gnu.tar.gz | tar xz -C ~/.local/bin soroban
+RUN curl -L https://github.com/stellar/soroban-tools/releases/download/v20.1.1/soroban-cli-20.1.1-x86_64-unknown-linux-gnu.tar.gz | tar xz -C ~/.local/bin soroban
 RUN chmod +x ~/.local/bin/soroban
 RUN echo "source <(soroban completion --shell bash)" >> ~/.bashrc
 RUN curl -L https://github.com/mozilla/sccache/releases/download/v0.3.3/sccache-v0.3.3-x86_64-unknown-linux-musl.tar.gz | tar xz --strip-components 1 -C ~/.local/bin sccache-v0.3.3-x86_64-unknown-linux-musl/sccache
@@ -35,10 +35,10 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --defau
 
 # In this chunk of "RUN" instructions, we are getting our rust environment
 # ready and prepared to write some Soroban smart contracts.
-RUN rustup install 1.72
-RUN rustup target add --toolchain 1.72 wasm32-unknown-unknown
-RUN rustup component add --toolchain 1.72 rust-src
-RUN rustup default 1.72
+RUN rustup install 1.75
+RUN rustup target add --toolchain 1.75 wasm32-unknown-unknown
+RUN rustup component add --toolchain 1.75 rust-src
+RUN rustup default 1.75
 
 # In this final "RUN" instruction, we are installing a compiler and toolchain
 # library for WebAssembly.
