@@ -67,7 +67,7 @@ take a second to examine this a bit more in-depth.
 On the right-hand side of this panel, you'll notice there are 4 (four) shells
 open. Each of them is designed for a specific purpose:
 
-- `Albedo Signer` - A simple webapp that facilitiates claiming rewards for
+- `Albedo Signer` - A simple webapp that facilitates claiming rewards for
   completed quests. (You won't be required to actually _do_ anything in this
   shell.)
 - `Testnet: docker` - An instance of the Testnet node that is running inside
@@ -78,9 +78,6 @@ open. Each of them is designed for a specific purpose:
   will make it easier and quicker for you to work with the network. When we say
   something like "you need to deploy a contract to the Testnet," you'll want
   to do that from this shell.
-- `CLI - Sandbox` - This is the "playground" you can use to build and test a
-  contract without needing to deploy it anywhere. Anything done in the sandbox
-  environment will not affect any accounts on the Testnet network.
 
 Above this list of terminals, you could use the **+** icon to open another
 terminal, if you closed one of yours.
@@ -176,7 +173,7 @@ contains a fully configured, ready to go Rust development environment. We have
 all the tooling, compilers, build processes, and anything else you'll need to
 hit the ground running. This includes:
 
-- An specified version of the [Rust][rust] programming language
+- A specified version of the [Rust][rust] programming language
 - This pre-configured [VS Code][vscode] editor, with some essential extensions
 - The [Cargo][cargo] package manager for Rust crates
 - The `wasm32-unknown-unknown` target for compiling your contracts
@@ -187,11 +184,10 @@ contract ready for you to look through in the `quests/0-hello-world/` directory.
 
 ## Soroban CLI
 
-Your workspace includes the Soroban CLI, as well. The Soroban CLI can execute
-Soroban contracts in the same environment the contract will execute on network,
-however in a local sandbox. This tool is in active development. So, conventions
-and usage should be expected to change. You can always find the latest about
-the [Soroban CLI here][soroban-cli]!
+Your workspace includes the Soroban CLI, as well. The Soroban CLI is an
+essential tool to interact with Soroban's JSON-RPC servers and execute smart
+contracts on the network. You can always find the latest about the [Soroban CLI
+here][soroban-cli]!
 
 ## Testnet
 
@@ -202,7 +198,7 @@ to worry about docker images, starting the service, or anything besides learning
 to make contracts!
 
 This will come in very handy when you are ready to deploy and share your
-contracts outside of the sandbox.
+contracts.
 
 ## Good Luck
 

@@ -10,13 +10,13 @@ tasks:
   - name: Testnet
     # During the "init" phase, docker will download the quickstart image.
     init: |
-      docker pull stellar/quickstart:testing@sha256:40636cdb1b9168b47e5dc120949fe3610ff914e8dd43409edb6fa66496bdd9c3
+      docker pull stellar/quickstart:testing
     # We enable a local JSON-RPC endpoint that will listen on port 8000.
     command: |
-      docker run --rm -it \
+      docker run --rm -i \
       -p 8000:8000 \
       --name stellar \
-      stellar/quickstart:testing@sha256:40636cdb1b9168b47e5dc120949fe3610ff914e8dd43409edb6fa66496bdd9c3
+      stellar/quickstart:testing
       --testnet \
       --enable-soroban-rpc
   # The "Albedo Signer" task begins a simple web app from within the Gitpod
@@ -40,21 +40,16 @@ tasks:
     env:
       SOROBAN_RPC_URL: "https://soroban-testnet.stellar.org:443"
       SOROBAN_NETWORK_PASSPHRASE: "Test SDF Network ; September 2015"
-    # To keep things tidy, we clear the terminal from the previous output.
-    command: |
-      source _squirtle/bash-hook
-      clear
-  # This "CLI - Sandbox" task provides a place to run contracts in a local
-  # sandbox environment. This is much quicker for early contract development.
-  - name: CLI - Sandbox
     # During `init` phase, we clean, build, and test the hello world contract.
     init: |
       cargo clean
       cargo fetch
-      cargo build --package soroban-hello-world-contract --target wasm32-unknown-unknown --release
+      soroban contract build --package soroban-hello-world-contract
       cargo test --package soroban-hello-world-contract
-    # We open the `README.md` file and then clear the terminal output.
+    # To keep things tidy, we open the `README.md` file and then clear the
+    # terminal from the previous output.
     command: |
+      source _squirtle/bash-hook
       gp open README.md
       clear
 
