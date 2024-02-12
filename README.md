@@ -221,7 +221,7 @@ _creating_ the Soroban platform are there, and willing to answer questions, too!
 Talk about "straight from the horse's mouth"!!
 
 [gitpod]: https://gitpod.io/#ENV=prod/https://github.com/stellar/soroban-quest--pioneer
-[gp-cli]: https://www.gitpod.io/docs/references/gitpod-cli
+[gp-cli]: https://www.gitpod.io/docs/configure/workspaces/gitpod-cli
 [rust]: https://www.rust-lang.org/
 [cargo]: https://doc.rust-lang.org/cargo/
 [vscode]: https://code.visualstudio.com/
