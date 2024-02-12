@@ -43,8 +43,9 @@ impl HelloContract {
     ///
     /// # Arguments
     ///
-    /// - `env` - the environment in which the contract is running
-    /// - `to` - who we are greeting (in this case a `Symbol`)
+    /// * `env` - the environment in which the contract is running (you don't
+    ///   need to supply this yourself)
+    /// * `to` - who we are greeting (in this case a `Symbol`)
     pub fn hello(env: Env, to: Symbol) -> Vec<Symbol> {
         // We are creating and returning a `Vec` containing two `Symbol` items:
         // ["Hello","friend"] (depends on what is supplied as the `to` argument)
