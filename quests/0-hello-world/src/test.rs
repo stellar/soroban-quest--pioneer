@@ -9,12 +9,11 @@
 use super::*;
 
 // From our Soroban SDK, we import the following macros:
-// - vec: creates a `Vec` with the given items
+// * vec: creates a `Vec` with the given items
+// * symbol_short: creates a short string, up to 9 characters
 // We also import the following types from the SDK:
-// - Env: provides access to the environment the contract is executing within
-// - Symbol: a short (32 or fewer characters) string with a limited character
-//   set [a-zA-Z0-9_]
-use soroban_sdk::{vec, Env};
+// * Env: provides access to the environment the contract is executing within
+use soroban_sdk::{symbol_short, vec, Env};
 
 // Here we add the `test` attribute to the `test()` function so Rust will know
 // to build a test runner for it.
