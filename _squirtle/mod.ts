@@ -5,6 +5,8 @@ import { Select, Confirm, Input } from "https://deno.land/x/cliffy@v0.25.4/promp
 
 const LOCAL_HORIZON = 'http://127.0.0.1:8000'
 const SOROBAN_RPC_URI = '/soroban/rpc'
+const MISSING_PK_MESSAGE = 'You have not yet connected your Stellar wallet. This will affect your ability to claim NFT and XLM awards. Would you like to connect your Stellar wallet?'
+const SHOW_TAX_KYC = false
 
 const runLogin = async () => {
   let env: any = await getEnv()
@@ -178,32 +180,32 @@ const runUser = async (
     console.log(`   ❌ Please connect your Stellar wallet`);
   }
 
-  if (
-    (user.kyc.ofac ? user.kyc.ofac.replace(/\W/g, '_') === 'no_match' : true)
-    && user.kyc.status === 'approved'
-  ) console.log(`   ✅ KYC flow has been completed`);
-  else {
-    missing = true
-    console.log(`   ❌ Please complete the KYC flow`);
-  }
+  if (SHOW_TAX_KYC) {
+    if (
+      (user.kyc.ofac ? user.kyc.ofac.replace(/\W/g, '_') === 'no_match' : true)
+      && user.kyc.status === 'approved'
+    ) console.log(`   ✅ KYC flow has been completed`);
+    else {
+      missing = true
+      console.log(`   ❌ Please complete the KYC flow`);
+    }
 
-  if (
-    user.taxStatus === 'accepted'
-    || user.taxStatus === 'pending'
-    || user.taxStatus === 'completed'
-    || (user.taxStatus === 'requested' && user.tax) // Fix for folks with an 'accepted' TAX doc but somehow got back into a `requested' taxStatus
-  ) console.log(`   ✅ Tax documents have been uploaded`);
-  else {
-    missing = true
-    console.log(`   ❌ Please upload your tax documents`);
+    if (
+      user.taxStatus === 'accepted'
+      || user.taxStatus === 'pending'
+      || user.taxStatus === 'completed'
+      || (user.taxStatus === 'requested' && user.tax) // Fix for folks with an 'accepted' TAX doc but somehow got back into a `requested' taxStatus
+    ) console.log(`   ✅ Tax documents have been uploaded`);
+    else {
+      missing = true
+      console.log(`   ❌ Please upload your tax documents`);
+    }
   }
 
   console.log(`-----------------------------`);
 
   if (missing) {
-    const missingConfirmed = await Confirm.prompt(`Your account is not yet fully complete.
-   This could affect your ability to claim either NFT or XLM rewards.
-   Would you like to complete your Stellar Quest account?`);
+    const missingConfirmed = await Confirm.prompt(MISSING_PK_MESSAGE);
 
     if (!missingConfirmed)
       return
@@ -300,9 +302,7 @@ const runCheck = async (argv: any) => {
   const siteUrl = isDev ? 'https://quest-dev.stellar.org' : 'https://quest.stellar.org'
 
   if (!user.pk) {
-    const missingPkConfirmed = await Confirm.prompt(`You have not yet connected your Stellar wallet.
-   This will affect your ability to claim NFT and XLM rewards.
-   Would you like to connect your Stellar wallet?`);
+    const missingPkConfirmed = await Confirm.prompt(MISSING_PK_MESSAGE);
 
     if (missingPkConfirmed) {
       return browse(`${siteUrl}/settings`)
@@ -310,18 +310,21 @@ const runCheck = async (argv: any) => {
   }
 
   else if (
-    !(
-      user.taxStatus === 'accepted'
-      || user.taxStatus === 'pending'
-      || user.taxStatus === 'completed'
-      || (user.taxStatus === 'requested' && user.tax)
-    ) || !(
-      (user.kyc.ofac ? user.kyc.ofac.replace(/\W/g, '_') === 'no_match' : true)
-      && user.kyc.status === 'approved'
+    SHOW_TAX_KYC
+    && (
+      !(
+        user.taxStatus === 'accepted'
+        || user.taxStatus === 'pending'
+        || user.taxStatus === 'completed'
+        || (user.taxStatus === 'requested' && user.tax)
+      ) || !(
+        (user.kyc.ofac ? user.kyc.ofac.replace(/\W/g, '_') === 'no_match' : true)
+        && user.kyc.status === 'approved'
+      )
     )
   ) {
     const missingPkConfirmed = await Confirm.prompt(`You have not yet completed the KYC flow and/or uploaded your tax documents.
-   This will affect your ability to claim XLM rewards.
+   This will affect your ability to claim XLM awards.
    Would you like to complete your Stellar Quest account?`);
 
     if (missingPkConfirmed) {
@@ -364,7 +367,7 @@ const runCheck = async (argv: any) => {
   console.log(message);
 
   const signPrompt = await Select.prompt({
-    message: 'How would you like to sign your reward transaction?',
+    message: 'How would you like to sign your award transaction?',
     options: [
       { name: "Albedo", value: "albedo" },
       { name: "Raw XDR", value: "xdr" },
@@ -384,7 +387,7 @@ const runCheck = async (argv: any) => {
 
   else if (signPrompt === 'xdr') {
     console.log(`-----------------------------`);
-    console.log(`✅ Find the unsigned reward XDR below.`);
+    console.log(`✅ Find the unsigned award XDR below.`);
     console.log(`   You can sign it wherever you please (e.g. Laboratory)`);
     console.log(`   however you MUST submit that signed XDR back here with`);
     console.log(`   sq submit <signed_xdr>`);
@@ -825,7 +828,7 @@ yargs(Deno.args)
       describe: 'The index of the quest to check',
       alias: ['i', 'number', 'n', 'quest', 'q'],
     }).demandOption(['index']), runCheck)
-  .command('submit [xdr]', 'Submit a signed reward XDR to the Stellar Quest backend', (yargs: any) => yargs
+  .command('submit [xdr]', 'Submit a signed award XDR to the Stellar Quest backend', (yargs: any) => yargs
     .positional('xdr', {
       describe: 'The XDR to submit to the Stellar Quest backend',
       alias: ['tx'],
