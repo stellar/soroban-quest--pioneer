@@ -32,5 +32,5 @@ In the rest of the Soroban quests, the files inside the `src/` directory, will
 also include indispensible information and insight. Trust me when I say you'll
 want to **read the source code in all of the quests**.
 
-[hello-world]: https://soroban.stellar.org/docs/getting-started/hello-world
+[hello-world]: https://developers.stellar.org/docs/build/smart-contracts/getting-started/hello-world
 [examples]: https://github.com/stellar/soroban-examples

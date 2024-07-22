@@ -38,13 +38,13 @@ tasks:
   - name: CLI - Testnet
     # We specify some required environment variables for use on the Testnet.
     env:
-      SOROBAN_RPC_URL: "https://soroban-testnet.stellar.org:443"
-      SOROBAN_NETWORK_PASSPHRASE: "Test SDF Network ; September 2015"
+      STELLAR_RPC_URL: "https://soroban-testnet.stellar.org:443"
+      STELLAR_NETWORK_PASSPHRASE: "Test SDF Network ; September 2015"
     # During `init` phase, we clean, build, and test the hello world contract.
     init: |
       cargo clean
       cargo fetch
-      soroban contract build --package soroban-hello-world-contract
+      stellar contract build --package soroban-hello-world-contract
       cargo test --package soroban-hello-world-contract
     # To keep things tidy, we open the `README.md` file and then clear the
     # terminal from the previous output.

@@ -2,8 +2,9 @@
 target
 .sccache
 .soroban
-.soroban-rpc-url
-.soroban-secret-key
+.stellar-rpc-url
+.stellar-secret-key
 _squirtle/sq
 node_modules
 *bundle*
+*test_snapshots*

@@ -8,12 +8,13 @@
 // were not marked as public using `pub`.
 use super::*;
 
-// From our Soroban SDK, we import the following macros:
-// * vec: creates a `Vec` with the given items
-// * symbol_short: creates a short string, up to 9 characters
+// From our Soroban SDK, we import the following macro:
+// - vec: creates a `Vec` with the given items
 // We also import the following types from the SDK:
-// * Env: provides access to the environment the contract is executing within
-use soroban_sdk::{symbol_short, vec, Env};
+// - Env: provides access to the environment the contract is executing within
+// - String: a contiguous, growable array of `u8`s used to hold characters in
+//   the alphabet (a-zA-Z0-9_)
+use soroban_sdk::{vec, Env, String};
 
 // Here we add the `test` attribute to the `test()` function so Rust will know
 // to build a test runner for it.
@@ -32,13 +33,17 @@ fn test() {
     let client = HelloContractClient::new(&env, &contract_address);
 
     // We invoke the `hello()` function from our `HelloContract`, providing the
-    // short `Symbol` "Dev" as the `to` argument.
-    let words = client.hello(&symbol_short!("Dev"));
+    // short `String` "Dev" as the `to` argument.
+    let words = client.hello(&String::from_str(&env, "Dev"));
     // Now, the actual test. We are asserting that the returned value from the
     // `hello()` function should be equal to a `Vec` we manually create with
-    // our desired values: ["Hello","Dev"]
+    // our desired string values: ["Hello","Dev"]
     assert_eq!(
         words,
-        vec![&env, symbol_short!("Hello"), symbol_short!("Dev"),]
+        vec![
+            &env,
+            String::from_str(&env, "Hello"),
+            String::from_str(&env, "Dev"),
+        ]
     );
 }

@@ -266,10 +266,10 @@ const runPlay = async (argv: any) => {
   )
 
   await getDotFilesLocation()
-    .then((location: string) => Deno.writeFile(`${location}/.soroban-secret-key`, new TextEncoder().encode(sk)))
+    .then((location: string) => Deno.writeFile(`${location}/.stellar-secret-key`, new TextEncoder().encode(sk)))
 
   console.log(`🔐 Quest Keypair for Stellar Quest Series 5 Quest ${argv.index}
-✅ SOROBAN_SECRET_KEY environment variable has been updated
+✅ STELLAR_SECRET_KEY environment variable has been updated
 ------------------------------------------
 Public Key: ${pk} (don't forget to fund me)
 Secret Key: ${sk}`)
@@ -449,7 +449,7 @@ const runRPC = async (argv: any, selectOnNotReady = true) => {
 
   let statusMessage = rpcEmotes[status]
 
-  // TODO if we're ready but using a SOROBAN_RPC_URL that isn't the Gitpod's ask if we want to revert (or maybe just revert automatically?)
+  // TODO if we're ready but using a STELLAR_RPC_URL that isn't the Gitpod's ask if we want to revert (or maybe just revert automatically?)
 
   if (ready || selectedHorizon === knownHorizons.SDF) {
     statusMessage += ` Your ${rpcIdentifier} is ready!`
@@ -643,7 +643,7 @@ const autoFund = async (pk: string) => {
 
 const getHorizonEndpoint = (): Promise<string> => {
   return getDotFilesLocation()
-    .then((location: string) => Deno.readFile(`${location}/.soroban-rpc-url`))
+    .then((location: string) => Deno.readFile(`${location}/.stellar-rpc-url`))
     .then((source: BufferSource) => new TextDecoder().decode(source))
     .then(url => url.replace(new RegExp(`${SOROBAN_RPC_URI}$`, 'g'), ""))
     .catch(() => LOCAL_HORIZON)
@@ -744,7 +744,7 @@ const selectRPCEndpoint = async () => {
 
   getDotFilesLocation()
     .then((location: string) => Deno.writeFileSync(
-      `${location}/.soroban-rpc-url`,
+      `${location}/.stellar-rpc-url`,
       new TextEncoder().encode(altNet)
     ))
 

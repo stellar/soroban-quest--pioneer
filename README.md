@@ -15,7 +15,7 @@
   - [Gitpod CLI](#gitpod-cli)
 - [Stellar Quest CLI](#stellar-quest-cli)
 - [Rust Environment](#rust-environment)
-- [Soroban CLI](#soroban-cli)
+- [Stellar CLI](#stellar-cli)
 - [Testnet](#testnet)
 - [Good Luck](#good-luck)
 - [Join us on Discord](#join-us-on-discord)
@@ -156,7 +156,7 @@ Commands:
   sq play [index]   Generate a Quest Keypair to play a Quest
   sq fund [key]     Create and fund an account on the Testnet
   sq check [index]  Check your Quest answer
-  sq submit [xdr]   Submit a signed reward XDR to the Stellar Quest backend
+  sq submit [xdr]   Submit a signed award XDR to the Stellar Quest backend
   sq rpc            Check the status of your local RPC endpoint
                                                               [aliases: horizon]
   sq                                                                   [default]
@@ -168,7 +168,7 @@ Options:
 
 ## Rust Environment
 
-Crucially toward the goal of writing smart contracts for Soroban, your workspace
+Crucially toward the goal of writing smart contracts for Stellar, your workspace
 contains a fully configured, ready to go Rust development environment. We have
 all the tooling, compilers, build processes, and anything else you'll need to
 hit the ground running. This includes:
@@ -178,16 +178,16 @@ hit the ground running. This includes:
 - The [Cargo][cargo] package manager for Rust crates
 - The `wasm32-unknown-unknown` target for compiling your contracts
 
-You have enough pre-installed to write, debug, test, build, and deploy Soroban
+You have enough pre-installed to write, debug, test, build, and deploy Stellar
 smart contracts from right within this Gitpod workspace. We even have an example
 contract ready for you to look through in the `quests/0-hello-world/` directory.
 
-## Soroban CLI
+## Stellar CLI
 
-Your workspace includes the Soroban CLI, as well. The Soroban CLI is an
-essential tool to interact with Soroban's JSON-RPC servers and execute smart
-contracts on the network. You can always find the latest about the [Soroban CLI
-here][soroban-cli]!
+Your workspace includes the Stellar CLI, as well. The Stellar CLI is an
+essential tool to interact with Stellar's JSON-RPC servers and execute smart
+contracts on the network. You can always find the latest about the [Stellar CLI
+here][stellar-cli]!
 
 ## Testnet
 
@@ -216,16 +216,16 @@ Adoption Fund, which SDF created to support the growth and development of the
 Soroban ecosystem. We'll be sharing more about additional programs on the
 Stellar Dev Discord in the not-too-distant future, so make sure to join today to
 be the among the first to hear those announcements. This is yet another way for
-you to **Tinker and Earn** XLM with Soroban! Many of the people who are
-_creating_ the Soroban platform are there, and willing to answer questions, too!
-Talk about "straight from the horse's mouth"!!
+you to **Tinker and Earn** XLM with Stellar smart contracts! Many of the people
+who are _creating_ the Soroban platform are there, and willing to answer
+questions, too! Talk about "straight from the horse's mouth"!!
 
 [gitpod]: https://gitpod.io/#ENV=prod/https://github.com/stellar/soroban-quest--pioneer
 [gp-cli]: https://www.gitpod.io/docs/configure/workspaces/gitpod-cli
 [rust]: https://www.rust-lang.org/
 [cargo]: https://doc.rust-lang.org/cargo/
 [vscode]: https://code.visualstudio.com/
-[soroban-cli]: https://soroban.stellar.org/docs/reference/soroban-cli
+[stellar-cli]: https://developers.stellar.org/docs/tools/stellar-cli
 [video]: https://youtu.be/6_tgpth6U5Y
 [thumbnail]: https://user-images.githubusercontent.com/2024293/201189898-dd9ae16e-698c-4b2d-b442-fec7d7222f3f.jpg
 [terminals]: https://user-images.githubusercontent.com/2024293/201201300-f86bbc98-6c0a-4189-b92c-fe4145c95f0d.png

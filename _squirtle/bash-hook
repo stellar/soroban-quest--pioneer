@@ -1,12 +1,12 @@
 function _sq_set_secret() {
     if [[ -n "$COMP_LINE" ]]; then return; fi
-    if [[ -f /workspace/.soroban-secret-key ]]
+    if [[ -f /workspace/.stellar-secret-key ]]
     then
-        export SOROBAN_ACCOUNT=$(</workspace/.soroban-secret-key)
+        export STELLAR_ACCOUNT=$(</workspace/.stellar-secret-key)
     fi
     if [[ -f /workspace/.soroban-rpc-url ]]
     then
-        export SOROBAN_RPC_URL=$(</workspace/.soroban-rpc-url)
+        export STELLAR_RPC_URL=$(</workspace/.stellar-rpc-url)
     fi
 }
 
