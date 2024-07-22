@@ -5,7 +5,7 @@ LABEL version="1.1.25"
 # These "RUN" shell commands are run on top of the "workspace-full" image, and
 # then committed as a new image which will be used for the next steps.
 # In this chunk of "RUN" instructions, we are downloading:
-# - The Soroban CLI (and we set up the shell completion, too!)
+# - The Stellar CLI (and we set up the shell completion, too!)
 # - sccache: a compiler cache that avoids running compiling tasks when possible
 # - cargo-watch: watches the project for changes and runs cargo when they occur
 # - deno: a JavaScript runtime built in Rust (we use this for the SQ cli)
@@ -34,7 +34,7 @@ RUN rm -rf .rustup
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain none -y
 
 # In this chunk of "RUN" instructions, we are getting our rust environment
-# ready and prepared to write some Soroban smart contracts.
+# ready and prepared to write some Stellar smart contracts.
 RUN rustup install 1.79
 RUN rustup target add --toolchain 1.79 wasm32-unknown-unknown
 RUN rustup component add --toolchain 1.79 rust-src
