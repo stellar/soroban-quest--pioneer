@@ -10,7 +10,7 @@ LABEL version="1.1.25"
 # - cargo-watch: watches the project for changes and runs cargo when they occur
 # - deno: a JavaScript runtime built in Rust (we use this for the SQ cli)
 RUN mkdir -p ~/.local/bin
-RUN curl -L https://github.com/stellar/stellar-cli/releases/download/v21.2.0/stellar-cli-21.2.0-x86_64-unknown-linux-gnu.tar.gz | tar xz -C ~/.local/bin stellar
+RUN curl -L https://github.com/stellar/stellar-cli/releases/download/v22.1.0/stellar-cli-22.1.0-x86_64-unknown-linux-gnu.tar.gz | tar xz -C ~/.local/bin stellar
 RUN chmod +x ~/.local/bin/stellar
 RUN echo "source <(stellar completion --shell bash)" >> ~/.bashrc
 RUN curl -L https://github.com/mozilla/sccache/releases/download/v0.8.1/sccache-v0.8.1-x86_64-unknown-linux-musl.tar.gz | tar xz --strip-components 1 -C ~/.local/bin sccache-v0.8.1-x86_64-unknown-linux-musl/sccache
