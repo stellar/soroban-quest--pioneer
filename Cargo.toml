@@ -36,4 +36,4 @@ lto = true
 # We could specify version numbers, crate URLs, and even specific commits to be
 # used for a given dependency.
 [workspace.dependencies.soroban-sdk]
-version = "21.3.0"
+version = "22.0.3"
