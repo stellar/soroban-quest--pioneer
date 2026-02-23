@@ -232,3 +232,7 @@ questions, too! Talk about "straight from the horse's mouth"!!
 [vsc-docs]: https://code.visualstudio.com/docs/terminal/basics
 [ports]: https://user-images.githubusercontent.com/2024293/201206484-f69f9123-3550-49be-97f2-f6f39fe9aa2f.png
 [dev-discord]: https://discord.gg/stellardev
+
+---
+
+> **Note:** This repository is not in scope for the Stellar Development Foundation bug bounty program. Vulnerabilities found in this repo are not eligible for rewards.
